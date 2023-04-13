@@ -1,0 +1,60 @@
+<%- include('../sidebar.ejs') %>
+<%- include('../header.ejs') %>
+
+<div class="col-md-9"> 
+    <div class="dash-right">
+        <div class="dash-header">
+            <div class="dash-title">
+                   <!-- Button trigger modal -->
+                <ul style="list-style-type: none;">
+                    <li>
+                        <h3>Student Enroll list</h3>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>mobile_number</th>
+                <th>address</th>
+                <th>gender</th>
+                <th>college_name</th>
+                <th>qualification</th>
+                <th>branch</th>
+                <th>action</th>
+            </tr>
+
+            </thead>
+
+            <tbody>
+                <% i=1 %>
+              <% s.forEach((item)=>{   %>
+
+              <tr>
+                <td><%= i++ %></td>
+                <td><%= item.name %></td>
+                <td><%= item.email %></td>
+                <td><%= item.mobile_number %></td>
+                <td><%= item.address %></td>
+                <td><%= item.gender %></td>
+                <td><%= item.college_name %></td>
+                <td><%= item.qualification %></td>
+                <td><%= item.branch %></td>
+                
+            <td>
+                <a href="/admin/studentview/<%= item._id %>" class="btn btn-info">View</a>
+                <a href="/admin/studentdelete/<%= item._id %>" class="btn btn-info">Delete</a>
+            </td>     
+            </tr>
+            <%    })  %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include('../footer.ejs') %>

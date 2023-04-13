@@ -1,0 +1,103 @@
+<%- include('../sidebar') %>
+<%- include('../header.ejs') %>
+
+
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div>
+                          <strong class="card-title">View</strong>
+                        </div>
+                        
+                    </div>
+                    <div class="card-body">
+                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view._id %></td>
+                                </tr>
+
+                                <tr>
+                                    <th>start_date</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view.start_date %></td>
+                                </tr>
+                                <tr>
+                                    <th>end_date</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view.end_date %></td>
+                                </tr>
+                                <tr>
+                                    <th>batch_name</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view.teacher_name %></td></td>
+                                </tr>
+                                <tr>
+                                    <th>timing</th>
+                                </tr>
+                                <td><%= view.timing %></td>
+
+                                <tr>
+                                    
+                                </tr>
+                                <tr>
+                                    <th>last_update</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view.last_update %></td>
+                                </tr>
+                                <tr>
+                                    <th>fee</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view.fee %></td>
+                                </tr>
+                                <tr>
+                                    <th>description</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view.description %></td>
+                                </tr>
+                                <tr>
+                                    <th>Image</th>
+                                </tr>
+
+                                <tr>
+                                    <td><img src="<%= view.image.url %>" width="50px"></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  
+  </div>
+  </div>
+
+  
+  
+  
+ 
+
+
+
+  <%- include('../footer.ejs') %>

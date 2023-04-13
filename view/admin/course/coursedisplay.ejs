@@ -1,0 +1,151 @@
+<%- include('../sidebar.ejs') %>
+<%- include('../header.ejs') %>
+
+<div class="col-md-9"> 
+    <div class="dash-right">
+        <div class="dash-header">
+            <div class="dash-title">
+                   <!-- Button trigger modal -->
+                <ul style="list-style-type: none;">
+                    <li>
+                        <h3>Course List</h3>
+                    </li>
+                    <li class="text-right">
+                        <button type="button" class="btn btn-primary addblog text-right" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Add Course
+                          </button>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Course_Name</th>
+                <th>Title</th>
+                <th>Teacher_Name</th>
+                <th>Action</th>
+            </tr>
+
+            </thead>
+
+            <tbody>
+              <% i=1 %>
+              <% e.forEach((item)=>{   %>
+
+              <tr>
+                <td><%= i++ %></td>
+                <td><img src="<%= item.image.url %>" width="50px"></td>
+                <td><%= item.Course_Name %></td>
+                <td><%= item.Title %></td>
+                <td><%= item.Teacher_Name %></td>
+                
+            <td>
+                <a href="/admin/courseview/<%= item._id %>" class="btn btn-info">View</a>
+                <a href="/admin/courseedit/<%= item._id %>" class="btn btn-info">Edit</a>
+                <a href="/admin/coursedelete/<%= item._id %>" class="btn btn-info">Delete</a>
+            </td>
+            
+            </tr>
+
+            <%    })  %>
+
+
+            </tbody>
+            
+
+              
+            
+            
+           
+                
+
+
+
+
+        </table>
+    </div>
+</div>
+
+
+
+<!-- model blog start --> 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Course</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="/insertcourses" method="post" enctype="multipart/form-data" >
+              <div class="md-3">
+                <label>Course Name</label>
+                <input type="text" name="Course_Name" class="form-control">
+            </div>
+            <div class="md-3">
+              <label>Fee</label>
+              <input type="text" name="Fee" class="form-control">
+          </div>
+                <div class="md-3">
+                    <label> Title</label>
+                    <input type="text" name="Title" class="form-control">
+                </div>
+                <div class="md-3">
+                  <label> Speed</label>
+                  <input type="text" name="Speed" class="form-control">
+              </div>
+              <div class="md-3">
+                <label> Rating</label>
+                <input type="text" name="Rating" class="form-control">
+            </div>
+            <div class="md-3">
+              <label> Teacher_Name</label>
+              <input type="text" name="Teacher_Name" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="form4Example3">Description</label>
+            <textarea class="form-control" name="Description" id="" cols="30" rows="10"></textarea>
+          </div>
+          <div class="md-3">
+              <label> Instructor</label>
+              <input type="text" name="Instructor" class="form-control">
+          </div>
+          <div class="md-3">
+              <label> Lectures</label>
+              <input type="text" name="Lectures" class="form-control">
+          </div>
+          <div class="md-3">
+              <label> Duration</label>
+              <input type="text" name="Duration" class="form-control">
+          </div>
+          <div class="md-3">
+              <label> Enrolled</label>
+              <input type="text" name="Enrolled" class="form-control">
+          </div>
+          <div class="md-3">
+              <label> Language</label>
+              <input type="text" name="Language" class="form-control">
+          </div>
+                
+                <div class="md-3">
+                  <label for="">Upload Image:</label>
+                  <input type="file" id="myfile" name="image"  class="form-control">
+              </div>
+                <br>
+                <button type="submit" class="btn btn-info"> Submit</button>
+                
+            </form>
+
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<%- include('../footer.ejs') %>

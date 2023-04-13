@@ -1,0 +1,92 @@
+<%- include('../sidebar.ejs') %>
+<%- include('../header.ejs') %>
+
+
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div>
+                          <strong class="card-title">Data Update</strong>
+                        </div>
+                        
+                    </div>
+                    <div class="card-body">
+                        <form action="/courseupdate/<%= edit.id %>" method="post" enctype="multipart/form-data" >
+                            <div class="md-3">
+                              <label>Course Name</label>
+                              <input type="text" name="Course_Name" class="form-control" value="<%= edit.Course_Name %>">
+                          </div>
+                          <div class="md-3">
+                            <label>Fee</label>
+                            <input type="text" name="Fee" class="form-control" value="<%= edit.Fee %>">
+                        </div>
+                              <div class="md-3">
+                                  <label> Title</label>
+                                  <input type="text" name="Title" class="form-control" value="<%= edit.Title %>">
+                              </div>
+                              <div class="md-3">
+                                <label> Speed</label>
+                                <input type="text" name="Speed" class="form-control" value="<%= edit.Speed %>">
+                            </div>
+                            <div class="md-3">
+                              <label> Rating</label>
+                              <input type="text" name="Rating" class="form-control" value="<%= edit.Rating %>">
+                          </div>
+                          <div class="md-3">
+                            <label> Teacher_Name</label>
+                            <input type="text" name="Teacher_Name" class="form-control" value="<%= edit.Teacher_Name %>">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="form4Example3"><%= edit.Description %></label>
+                            <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+                          </div>
+                        <div class="md-3">
+                            <label> Instructor</label>
+                            <input type="text" name="Instructo" class="form-control" value="<%= edit.Instructo %>">
+                        </div>
+                        <div class="md-3">
+                            <label> Lectures</label>
+                            <input type="text" name="Lectures" class="form-control" value="<%= edit.Lectures %>">
+                        </div>
+                        <div class="md-3">
+                            <label> Duration</label>
+                            <input type="text" name="Duration" class="form-control" value="<%= edit.Duration %>">
+                        </div>
+                        <div class="md-3">
+                            <label> Enrolled</label>
+                            <input type="text" name="Enrolled" class="form-control" value="<%= edit.Enrolled %>">
+                        </div>
+                        <div class="md-3">
+                            <label> Language</label>
+                            <input type="text" name="Language" class="form-control" value="<%= edit.Language %>">
+                        </div>
+                              
+                              <div class="md-3">
+                                <label for="">Upload Image:</label>
+                                <input type="file" id="myfile" name="image"  class="form-control">
+                            </div>
+                              <br>
+                              <button type="submit" class="btn btn-info">Update</button>
+                              
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .animated -->
+  
+  
+  </div><!-- .content -->
+  </div><!-- /#right-panel -->
+
+  
+  
+  
+  <!-- Modal -->
+  
+
+
+    <%- include('../footer.ejs') %>

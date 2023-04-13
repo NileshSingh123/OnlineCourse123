@@ -1,0 +1,54 @@
+<%- include('../../sidebar.ejs') %>
+<%- include('../../header.ejs') %>
+
+
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div>
+                          <strong class="card-title">Data Update</strong>
+                        </div>
+                        
+                    </div>
+                    <div class="card-body">
+                        <form  method="post" action="/sliderupdate/<%= edit._id %>" enctype="multipart/form-data">
+               
+                            <div class="mb-3">
+                              <label for="">Home Title</label>
+                              <input type="text" name="S_title" class="form-control" value="<%= edit.S_title %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Home Description</label>
+                                <textarea name="S_discription" class="form-control" id="" cols="30" rows="7"><%= edit.description %></textarea>
+                            </div>
+                            <div class="mb-3">
+                              <label for="">Upload Slider</label>
+                              <input type="file" name="S_slider" class="form-control">
+                            </div>
+                            <img src="<%= edit.S_slider.url %>">
+                            
+                            <div>
+                              <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .animated -->
+  
+  
+  </div><!-- .content -->
+  </div><!-- /#right-panel -->
+
+  
+  
+  
+  <!-- Modal -->
+  
+
+
+    <%- include('../../footer.ejs') %>

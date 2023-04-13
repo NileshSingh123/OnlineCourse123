@@ -1,0 +1,75 @@
+<%- include('../sidebar.ejs') %>
+<%- include('../header.ejs') %>
+
+
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div>
+                          <strong class="card-title">Data Update</strong>
+                        </div>
+                        
+                    </div>
+                    <div class="card-body">
+                        <form action="/batchupdate/<%= edit.id %>" method="post" enctype="multipart/form-data" >
+                            <div class="md-3">
+                              <label>start_date</label>
+                              <input type="text" name="start_date" class="form-control" value="<%= edit.start_date %>">
+                          </div>
+                          <div class="md-3">
+                            <label>end_date</label>
+                            <input type="text" name="end_date" class="form-control" value="<%= edit.end_date %>">
+                        </div>
+                              <div class="md-3">
+                                  <label>batch_name</label>
+                                  <input type="text" name="batch_name" class="form-control" value="<%= edit.batch_name %>">
+                              </div>
+                              <div class="md-3">
+                                <label> teacher_name</label>
+                                <input type="text" name="teacher_name" class="form-control" value="<%= edit.teacher_name %>">
+                            </div>
+                            <div class="md-3">
+                              <label> timing</label>
+                              <input type="text" name="timing" class="form-control" value="<%= edit.timing %>">
+                          </div>
+                          <div class="md-3">
+                            <label> last_update</label>
+                            <input type="text" name="last_update" class="form-control" value="<%= edit.last_update %>">
+                        </div>
+                        <div class="md-3">
+                            <label>fee</label>
+                            <input type="text" name="fee" class="form-control" value="<%= edit.fee %>">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="form4Example3"><%= edit.description %></label>
+                            <textarea class="form-control" name="" id="description" cols="30" rows="10"></textarea>
+                          </div>
+                              <div class="md-3">
+                                <label for="">Upload Image:</label>
+                                <input type="file" id="myfile" name="image"  class="form-control">
+                            </div>
+                              <br>
+                              <button type="submit" class="btn btn-info">Update</button>
+                              
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- .animated -->
+  
+  
+  </div><!-- .content -->
+  </div><!-- /#right-panel -->
+
+  
+  
+  
+  <!-- Modal -->
+  
+
+
+    <%- include('../footer.ejs') %>

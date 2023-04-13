@@ -1,0 +1,82 @@
+<%- include('../sidebar.ejs') %>
+<%- include('../header.ejs') %>
+
+
+<div class="content mt-3">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div>
+                          <strong class="card-title">View</strong>
+                        </div>
+                        
+                    </div>
+                    <div class="card-body">
+                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view._id %></td>
+                                </tr>
+
+                                <tr>
+                                    <th>name</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view.name %></td>
+                                </tr>
+                                <tr>
+                                    <th>email</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view.email %></td>
+                                </tr>
+                                <tr>
+                                    <th>mobile_number</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view.mobile_number %></td></td>
+                                </tr>
+                                <tr>
+                                    <th>subject</th>
+                                </tr>
+                                <td><%= view.subject %></td>
+
+                                <tr>
+                                    
+                                </tr>
+                                <tr>
+                                    <th>message</th>
+                                </tr>
+
+                                <tr>
+                                    <td><%= view.message %></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  
+  </div>
+  </div>
+
+  
+  
+  
+ 
+
+
+
+    <%- include('../footer.ejs') %>
