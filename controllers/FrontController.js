@@ -32,13 +32,21 @@ class FrontController{
 
     static contact = async(req,res)=>{
         
-        res.render('../view/contact.ejs')
+        res.render('../view/contact.ejs',{message: req.flash("success")})
     }
 
     static login = async(req,res)=>{
         
         res.render('../view/login.ejs',{message: req.flash("success"),message1:req.flash("error")});
     }
+
+    static resister = async(req,res)=>{
+        
+        res.render('../view/resister.ejs',{message: req.flash('error')})
+    }
+
+    
+
 
     static visite = (req,res)=>{
         res.render('../view/visite.ejs')
@@ -88,35 +96,35 @@ class FrontController{
         res.render('../view/instructor.ejs')
     }
 
-static verify = async(req,res)=>{
-    try{
-        //  console.log(req.body)
-        const{email,password} = req.body
-        if(email && password){
-            const admin = await AdminModel.findOne({email:email})
-            if(admin != null){
-                const ismatched = await bcrypt.compare(password,admin.password)
-                if((admin.email==email) && ismatched){
-                    res.redirect('/admin/dashboard')
+// static verify = async(req,res)=>{
+//     try{
+//         //  console.log(req.body)
+//         const{email,password} = req.body
+//         if(email && password){
+//             const admin = await AdminModel.findOne({email:email})
+//             if(admin != null){
+//                 const ismatched = await bcrypt.compare(password,admin.password)
+//                 if((admin.email==email) && ismatched){
+//                     res.redirect('/admin/dashboard')
 
-                }else{
-                    req.flash("error","email or password is not match");
-                res.redirect("/login")
-                }
+//                 }else{
+//                     req.flash("error","email or password is not match");
+//                 res.redirect("/login")
+//                 }
 
-            }else{
-                req.flash("error","You are not register user");
-                res.redirect("/login")
-            }
+//             }else{
+//                 req.flash("error","You are not register user");
+//                 res.redirect("/login")
+//             }
 
-        }else{
-            req.flash("error","All field are required");
-            res.redirect("/login")
-        }
-    }catch(error){
-        console.log(error)
-    }
-}
+//         }else{
+//             req.flash("error","All field are required");
+//             res.redirect("/login")
+//         }
+//     }catch(error){
+//         console.log(error)
+//     }
+// }
 
 
     

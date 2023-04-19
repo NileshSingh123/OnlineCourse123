@@ -59,7 +59,7 @@
                    <div class="breadcrumb__list">
                       <span><a href="#">Home</a></span>
                       <span class="dvdr"><i class="fa-regular fa-angle-right"></i></span>
-                      <span>Event Details</span>
+                      <span>Batch Details</span>
                    </div>
                 </div>
              </div>
@@ -159,12 +159,82 @@
                                </li>
                             </ul>
                          </div>
-                         <div class="events__join-btn p-relative z-index-1">
-                            <a href="#" class="tp-btn w-100">
-                               <span>Enroll<i class="fa-regular fa-arrow-right"></i> </span>
-                               <div class="transition"></div>
-                            </a>
+                         <div class="course__enroll-btn p-relative z-index-1">
+                           <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#btechmodel">Enroll - </button>
                          </div>
+
+                         <div class="modal fade" id="btechmodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                           <div class="modal-dialog">
+                             <div class="modal-content">
+                               <div class="modal-header">
+                                 <h1 class="modal-title fs-5" id="exampleModalLabel">Book Now</h1>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                               </div>
+                               <form action="/student_insert" method="post" >
+                                 <div class="modal-body">
+                                    <div class="mb-3">
+                                      <label>name</label>
+                                      <input type="text" name="name" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                      <label>email</label>
+                                      <input type="email" name="email" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                       <label>mobile_number</label>
+                                       <input type="text" name="mobile_number" class="form-control">
+                                     </div>
+                                    <div class="mb-3">
+                                      <label>address</label>
+                                      <textarea type="text" name="address" class="form-control"></textarea>
+                                    </div>
+                                    <div class="form-check">
+                                       <p >gender</p>
+                                       <input class="form-check-input" type="radio" name="gender">
+                                       <label class="form-check-label">
+                                         Male
+                                       </label>
+                                     </div>
+                                     <div class="form-check">
+                                       <input class="form-check-input" type="radio" name="gender">
+                                       <label class="form-check-label">
+                                         Female
+                                       </label>
+                                     </div>
+                                    <div>
+                                    <select class="mt-3 w-100" name="college_name">
+                                      <option selected>college_name</option>
+                                      <option>ITM</option>
+                                      <option>MITS</option>
+                                      <option>RJIT</option>
+                                    </select>
+                                  </div>
+                                  <div>
+                                    <select class="mt-3 w-100" aria-label="Default select example" name="qualification">
+                                       <option selected>qualification</option>
+                                       <option>Matric</option>
+                                       <option>Graduation</option>
+                                       <option>PostGraduation</option>
+                                     </select>
+                                  </div>
+                                  <div>
+                                    <select class="mt-3 w-100" aria-label="Default select example" name="branch">
+                                      <option selected>branch</option>
+                                      <option>BCA</option>
+                                      <option>Btech</option>
+                                      <option>MCA</option>
+                                    </select>
+                                  </div>
+                                    </div>
+                               
+                                 <div style="margin-left: 320px;">
+                                 <button  type="submit" class="btn btn-info">Submit</button>
+                                 </div>
+                              </form>
+                               </div>
+                              
+                             </div>
+                           </div>
                       </div>
                    </div>
                 </div>

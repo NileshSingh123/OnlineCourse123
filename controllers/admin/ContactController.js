@@ -10,7 +10,7 @@ class ContactController{
 
     static contact_insert = async(req,res)=>{
         try{
-            console.log(req.body)
+            //console.log(req.body)
             const data = new ContactModel({
                 name: req.body.name,
                 email: req.body.email,

@@ -70,6 +70,11 @@
 
 
      <!-- contact area start -->
+     <% if(message.length > 0){  %>
+      <div class="alert alert-success">
+          <%= message %>
+      </div>
+   <%    }  %>
      <section class="contact__area pt-115 pb-120">
        <div class="container">
           <div class="row">
@@ -79,6 +84,7 @@
                       <h2 class="section__title">Get in<span class="yellow-bg yellow-bg-big">touch<img src="/assets/img/shape/yellow-bg.png" alt=""></span></h2>
                       <p>Have a question or just want to say hi? We'd love to hear from you.</p>
                    </div>
+                  
                    <div class="contact__form mb-30">
                       <form action="/contact_insert" id="contact-form" method="post">
                          <div class="row">

@@ -60,9 +60,9 @@ class AboutController{
     static about_update = async (req,res)=>{
         try{
 
-            const data = await AboutModel.findById(req,params.id)
+            const data = await AboutModel.findById(req.params.id)
             const imageid = data.image.public_id
-            console.log(imageid)
+            //console.log(imageid)
             await cloudinary.uploader.destroy(imageid)
 
             //image update
@@ -80,7 +80,7 @@ class AboutController{
             },
         });
         await result.save();
-        res.redirect("/admin/about/aboutdisplay")
+        res.redirect("/admin/about/aboutdispay")
         }catch(error){
             console.log(error)
         }
