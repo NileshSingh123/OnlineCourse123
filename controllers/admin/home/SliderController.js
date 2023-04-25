@@ -81,7 +81,7 @@ static sliderupdate = async(req,res)=>{
     // image id deletion
     const data = await SliderModel.findById(req.params.id)
     const imageid = data.S_slider.public_id
-    console.log(imageid)
+    //console.log(imageid)
     await cloudinary.uploader.destroy(imageid)
 
     // image update

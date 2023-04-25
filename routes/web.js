@@ -27,6 +27,7 @@ router.get("/event-details/:id",FrontController.eventdetails);
 router.get("/instructor",FrontController.instructor);
 router.get('/placement',FrontController.placement)
 
+
 // router.post('/verifylogin',FrontController.verify)
   
 
@@ -37,6 +38,9 @@ router.post('/verify_login',AdminController.verifylogin)
 router.get('/logout',AdminController.logout)
 router.post('/adminchangepassword',admin_auth,AdminController.updatePassword)
 router.get('/changepassword',admin_auth,AdminController.changepassword)
+router.get('/forgetpassword',AdminController.forgetpassword)
+
+
 
 
 //course controoler 
@@ -61,6 +65,7 @@ router.post('/student_insert',admin_auth,StudentController.student_insert)
 router.get('/admin/student/studentdisplay',admin_auth,StudentController.studentdisplay)
 router.get('/admin/studentview/:id',admin_auth,StudentController.view)
 router.get('/admin/studentdelete/:id',admin_auth,StudentController.studentdelete)
+// router.post('/student_insert',StudentController.sendEmail)
 
 //batch cotroller
 router.get('/admin/batch/batchdisplay',admin_auth,BatchController.batchdisplay)
@@ -84,6 +89,7 @@ router.get('/admin/contact/contactdisplay',admin_auth,ContactController.contactd
 router.post('/contact_insert',admin_auth,ContactController.contact_insert)
 router.get('/admin/contactdelete/:id',admin_auth,ContactController.contactdelete)
 router.get('/admin/contactview/:id',admin_auth,ContactController.view)
+
 
 
 

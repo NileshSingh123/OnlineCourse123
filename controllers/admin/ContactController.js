@@ -19,8 +19,10 @@ class ContactController{
                 message:req.body.message
             })
             await data.save()
-            req.flash('success','message sent successfully')
+            //console.log("save item")
+            req.flash('error','message sent successfully')
             res.redirect('/contact')
+            
            
         }
         catch(error){

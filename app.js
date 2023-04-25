@@ -41,8 +41,6 @@ app.use('/',web)
 app.use(express.static('public'))
 
 
-
-
 //server create
 app.listen(port, () => {
     console.log('server start local server:3000')

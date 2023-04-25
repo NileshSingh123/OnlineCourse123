@@ -32,7 +32,8 @@ class FrontController{
 
     static contact = async(req,res)=>{
         
-        res.render('../view/contact.ejs',{message: req.flash("success")})
+        res.render('../view/contact.ejs',{message: req.flash("error")})
+        console.log(req.flash("error"))
     }
 
     static login = async(req,res)=>{
@@ -44,6 +45,8 @@ class FrontController{
         
         res.render('../view/resister.ejs',{message: req.flash('error')})
     }
+
+    
 
     
 
@@ -60,7 +63,7 @@ class FrontController{
     static coursedetails = async(req,res)=>{
         try{
             const data = await CoursesModel.findById(req.params.id)
-            const data1 = await CoursesModel.find().skip({_id:-1}).limit(6)
+            const data1 = await CoursesModel.find().skip({_id:-1}).limit(3)
             // console.log(data1)
             res.render('../view/course-details.ejs',{d:data,d1:data1})
         }catch(err){

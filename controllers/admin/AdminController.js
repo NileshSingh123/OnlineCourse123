@@ -17,6 +17,10 @@ class AdminController {
     res.render('../view/admin/changepassword.ejs',{message1: req.flash("error")})
   }
 
+  static forgetpassword = async (req,res) =>{
+    res.render('../view/forgetpassword.ejs')
+  }
+
 
 
 
@@ -148,6 +152,8 @@ class AdminController {
       res.redirect('/changepassword')
     }
   }
+
+  
   }
 
 module.exports = AdminController

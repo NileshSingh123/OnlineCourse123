@@ -1,6 +1,7 @@
 const cloudinary = require("cloudinary").v2;
 const CoursesModel = require("../../models/Courses");
 
+
 cloudinary.config({
   cloud_name: "dbrnbg1n1",
   api_key: "954334871439665",
@@ -119,5 +120,10 @@ class CourseController {
       console.log(error);
     }
   };
+
+
+
+
+
 }
 module.exports = CourseController;
