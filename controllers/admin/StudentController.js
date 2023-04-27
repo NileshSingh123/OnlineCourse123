@@ -25,6 +25,7 @@ class StudentController{
                 email: req.body.email,
                 mobile_number: req.body.mobile_number,
                 address: req.body.address,
+                course_name: req.body.course_name,
                 gender: req.body.gender,
                 college_name: req.body.college_name,
                 qualification: req.body.qualification,

@@ -73,6 +73,8 @@ class BatchController{
         try{
         const data = await BatchModel.findById(req.params.id)
         const imageid = data.image.public_id;
+        //console.log(imageid)
+        await cloudinary.uploader.destroy(imageid)
 
         //image update
         const file = req.files.image;
@@ -94,7 +96,7 @@ class BatchController{
                 url: imagefile.secure_url,
             },
         });
-        await data.save();
+        await result.save();
         res.redirect("/admin/batch/batchdisplay");
         }catch (error){
             console.log(error);

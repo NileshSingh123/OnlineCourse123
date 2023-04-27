@@ -101,7 +101,7 @@ class CourseController {
           url: imagefile.secure_url,
         },
       });
-      await data.save();
+      await result.save();
       res.redirect("/admin/course/coursedisplay");
     } catch (error) {
       console.log(error);
@@ -121,7 +121,21 @@ class CourseController {
     }
   };
 
-
+  static getData = async (req, res) => {
+    console.log('hello')
+    const currentPage = parseInt(req.query.page) || 1; // Get the current page number from the query string, or default to page 1
+    const perPage = 6; // Set the number of records to display per page
+    const totalRecords = await Data.countDocuments(); // Count the total number of records in the database
+    const totalPages = Math.ceil(totalRecords / perPage); // Calculate the total number of pages
+  
+    const data = await Data.find().skip((currentPage - 1) * perPage).limit(perPage); // Retrieve data from the database based on the current page number and number of records per page
+  
+    res.render('data', {
+      data,
+      currentPage,
+      totalPages
+    }); // Render the data to the view using EJS and pass the current page number and total number of pages
+  };
 
 
 
