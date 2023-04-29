@@ -13,7 +13,7 @@ class FrontController{
         const result = await CoursesModel.find()
         const upc = await BatchModel.find()
         // console.log(data)
-        res.render('../view/home.ejs',{d:data,e:result,ba:upc})
+        res.render('../view/home.ejs',{d:data,e:result,ba:upc,message: req.flash("error")})
     }
 
     static about = async(req,res)=>{
@@ -32,7 +32,7 @@ class FrontController{
 
     static contact = async(req,res)=>{
         
-        res.render('../view/contact.ejs',{message: req.flash("error")})
+        res.render('../view/contact.ejs',{message1: req.flash("success")})
         console.log(req.flash("error"))
     }
 

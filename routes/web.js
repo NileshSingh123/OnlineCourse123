@@ -61,7 +61,7 @@ router.get('/admin/sliderdelete/:id',admin_auth,SliderController.sliderdelete)
 
 
 //student controller
-router.post('/student_insert',admin_auth,StudentController.student_insert)
+router.post('/student_insert',StudentController.student_insert)
 router.get('/admin/student/studentdisplay',admin_auth,StudentController.studentdisplay)
 router.get('/admin/studentview/:id',admin_auth,StudentController.view)
 router.get('/admin/studentdelete/:id',admin_auth,StudentController.studentdelete)
@@ -86,7 +86,7 @@ router.get('/admin/aboutdelete/:id',admin_auth,AboutController.aboutdelete)
 
 //contact controller
 router.get('/admin/contact/contactdisplay',admin_auth,ContactController.contactdisplay)
-router.post('/contact_insert',admin_auth,ContactController.contact_insert)
+router.post('/contact_insert',ContactController.contact_insert)
 router.get('/admin/contactdelete/:id',admin_auth,ContactController.contactdelete)
 router.get('/admin/contactview/:id',admin_auth,ContactController.view)
 

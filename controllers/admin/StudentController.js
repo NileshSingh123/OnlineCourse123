@@ -32,8 +32,8 @@ class StudentController{
                 branch: req.body.branch
             });
             await result.save()
+            req.flash('error', 'You are resistered successfully')
             res.redirect('/')
-
         }catch(error){
             console.log(error)
         }

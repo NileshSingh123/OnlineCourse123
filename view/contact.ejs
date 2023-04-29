@@ -81,15 +81,13 @@
                       <h2 class="section__title">Get in<span class="yellow-bg yellow-bg-big">touch<img src="/assets/img/shape/yellow-bg.png" alt=""></span></h2>
                       <p>Have a question or just want to say hi? We'd love to hear from you.</p>
                    </div>
-                   <%= message %>
-                   <% if(message.length > 0){  %>
+                   <% if(message1.length > 0){  %>
                      <div class="alert alert-success">
-                         <%= message %>
+                         <%= message1 %>
                      </div>
                   <%    }  %>
-                  
                    <div class="contact__form mb-30">
-                      <form action="/contact_insert" id="contact-form" method="post">
+                      <form action="/contact_insert" method="post" enctype="multipart/form-data">
                          <div class="row">
                             <div class="col-xxl-6 col-xl-6 col-md-6">
                                <div class="contact__form-input">
